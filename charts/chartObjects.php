@@ -42,7 +42,7 @@ var TransitTotals = new CanvasJS.Chart("TransitTotalDiv", {
         fontSize: Variables.title.fontSize
     },
     subtitles: [{
-        text: "Onboard --> Pickup2",
+        text: "Onboard ---> Pickup2",
         fontFamily: Variables.fontFamily,
 		fontSize: Variables.subTitle.fontSize
 	}],
@@ -210,37 +210,6 @@ function toggleDataSeries(e){
 	}
 	FreightBreakdown.render();
 }
-
-
-
-var chartBilledDaily = new CanvasJS.Chart("BilledDailyData", {
-    colorSet: "myShades",
-	theme: "dark1",
-    animationEnabled: true,
-    backgroundColor: "rgba(250, 247, 247, 0)",
-	title: {
-        text: "World Energy Consumption by Sector - 2012",
-        fontFamily: "sans-serif",
-        fontSize: Variables.title.fontSize
-
-	},
-	data: [{
-		type: "pie",
-		indexLabel: "{y}",
-		yValueFormatString: "#,##0.00\"%\"",
-		indexLabelPlacement: "inside",
-		indexLabelFontColor: "#36454F",
-		indexLabelFontSize: 18,
-		indexLabelFontWeight: "bolder",
-		showInLegend: true,
-		legendText: "{label}",
-		dataPoints: <?php echo json_encode($BilledDailyData, JSON_NUMERIC_CHECK); ?>
-	}]
-});
-chartBilledDaily.render();
- 
-
- 
 
 
 

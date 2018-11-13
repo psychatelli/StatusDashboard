@@ -20,19 +20,6 @@
   ?>
 
 
-  <?php 
-    // $path = $_SERVER['DOCUMENT_ROOT'];
-    // $path .= "/charts/CompanyBilling/companyBillingData.php";
-    // include_once($path);
-  ?>
-
-
-  <?php 
-    $path = $_SERVER['DOCUMENT_ROOT'];
-    $path .= "/charts/IndividualBilledDaily/individualBilledDailyData.php";
-    include_once($path);
-  ?>
-
 
   <?php 
     $path = $_SERVER['DOCUMENT_ROOT'];
@@ -138,18 +125,14 @@
         </div>
 
 
-       <div class="card col s12 m5">
+       <!-- <div class="card col s12 m5">
             <div class="card-content">
-              <div id="BilledDailyData" style="height: 370px; width: 100%;"></div>
-            </div>
-        </div>
-
-
-        <!-- <div class="card col s12 m5">
-            <div class="card-content">
-              <div id="CompanyBilling" style="height: 370px; width: 100%;"> </div>
+              <div id="BilledDailyData" style="height: 270px; width: 100%;"></div>
             </div>
         </div> -->
+
+
+      
 
         
 
