@@ -5,7 +5,7 @@ $TransitTotalData = array(
 	array("label"=> "Ocean Freight", "y"=> 30),
 	array("label"=> "LCL", "y"=> 15),
 	array("label"=> "Domestic", "y"=> 20),
-	
+	//a
 );
 	
 ?>

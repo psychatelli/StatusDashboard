@@ -17,38 +17,38 @@ const Variables = {
 
 window.onload = function () {
 
-  	// CanvasJS.addColorSet("myShades",
-    //             [
-    //             "#0157FB",
-    //             "#F5705C",
-    //             "#69f065",
-    //             "#f065bd",
-    //             "#e0dd1f"                
-    //             ]);
-	CanvasJS.addColorSet("myShades",
+  	CanvasJS.addColorSet("myShades",
                 [
-                "#02fff6",
-                "#02c9c2",
-                "#01a39d",
-                "#007a75",
-                "#005955"                
+                "#01f6ff", //Air Freight
+                "#0038ff", // Ocean Freight
+                "#0129b7", // LCL
+                "#ff02d9", // Domestic
+                "#e9ff01"  // Break Bulk              
                 ]);
-
-	// CanvasJS.addColorSet("FreightBreakdownColor",
+	// CanvasJS.addColorSet("myShades",
     //             [
-    //             "#0157FB",
-    //             "#F5705C",
-    //             "#f065bd",
-    //             "#f4b841"                
+    //             "#02fff6",
+    //             "#02c9c2",
+    //             "#01a39d",
+    //             "#007a75",
+    //             "#005955"                
     //             ]);
 
 	CanvasJS.addColorSet("FreightBreakdownColor",
                 [
-                "#02fff6",
-                "#02c9c2",
-                "#007a75",
-                "#003532"                
+                "#01f6ff", //Air Freight
+                "#0038ff", // Ocean Freight
+                "#ff02d9", // Domestic
+                "#8f00fc"  // Duties              
                 ]);
+
+	// CanvasJS.addColorSet("FreightBreakdownColor",
+    //             [
+    //             "#02fff6",
+    //             "#02c9c2",
+    //             "#007a75",
+    //             "#003532"                
+    //             ]);
 	
 				
 
@@ -182,7 +182,7 @@ var FreightSpendingMonthly = new CanvasJS.Chart("FreightSpendingDiv", {
 	},
 	data: [{
 		type: "column",
-		color: "#ef02c4",
+		color: "#fc0000",
 		name: "Last Year",
 		indexLabel: "{y}",
 		yValueFormatString: "$#0.##",
@@ -190,7 +190,7 @@ var FreightSpendingMonthly = new CanvasJS.Chart("FreightSpendingDiv", {
 		dataPoints: <?php echo json_encode($fsm1, JSON_NUMERIC_CHECK); ?>
 	},{
 		type: "column",
-		color: "#ad1391",
+		color: "#6d0101",
 		name: "This year",
 		indexLabel: "{y}",
 		yValueFormatString: "$#0.##",
@@ -286,7 +286,7 @@ var combined = new CanvasJS.Chart("Combined", {
 	data: [
 	{
 		type: "area",
-		color: '#e5122a',
+		color: '#00fcc5',
 		name: "Expected Billed",
 		showInLegend: "true",
 		xValueType: "dateTime",
@@ -296,7 +296,7 @@ var combined = new CanvasJS.Chart("Combined", {
 	},
 	{
 		type: "column",
-		color: '#c10016',
+		color: '#272826',
 		name: "Current",
 		showInLegend: "true",
 		xValueType: "dateTime",

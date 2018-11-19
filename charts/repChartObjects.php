@@ -22,8 +22,8 @@ window.onload = function () {
   CanvasJS.addColorSet("myShades",
                 [
 
-                "#737ef1",
-                "#4b58ea",
+                "#02f954",
+                "#f90101",
                             
                 ]);
 
