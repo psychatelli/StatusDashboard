@@ -44,5 +44,35 @@ $cs3 = array(
 
 
 );
+
+$cs4 = array(
+	array("label"=> "Westlake", "y"=> 3),
+	array("label"=> "Burniker", "y"=> 7),
+	array("label"=> "Kumar Sangakkara", "y"=> 4),
+	array("label"=> "Jacques Kallis", "y"=> 10),
+	array("label"=> "Mahela Jayawardene", "y"=> 3),
+	array("label"=> "Hashim Amla", "y"=> 9),
+	array("label"=> "Brian Lara", "y"=> 3),
+	array("label"=> "Virat Kohli", "y"=> 6),
+	array("label"=> "Rahul Dravid", "y"=> 7),
+	array("label"=> "AB de Villiers", "y"=> 2),
+
+
+);
+
+$cs5 = array(
+	array("label"=> "Westlake", "y"=> 3),
+	array("label"=> "Burniker", "y"=> 7),
+	array("label"=> "Kumar Sangakkara", "y"=> 4),
+	array("label"=> "Jacques Kallis", "y"=> 10),
+	array("label"=> "Mahela Jayawardene", "y"=> 3),
+	array("label"=> "Hashim Amla", "y"=> 9),
+	array("label"=> "Brian Lara", "y"=> 3),
+	array("label"=> "Virat Kohli", "y"=> 6),
+	array("label"=> "Rahul Dravid", "y"=> 7),
+	array("label"=> "AB de Villiers", "y"=> 2),
+
+
+);
 	
 ?>

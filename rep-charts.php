@@ -44,7 +44,7 @@
 
 
 
-        <div class="card col s12 m5">
+        <div class="card col s12 m3">
           <div class="card-content">
               <div class="row">
                   <div class="col s12" style="margin-bottom: 20px;">

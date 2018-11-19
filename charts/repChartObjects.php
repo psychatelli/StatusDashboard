@@ -22,11 +22,9 @@ window.onload = function () {
   CanvasJS.addColorSet("myShades",
                 [
 
-                "#0157FB",
-                "#F5705C",
-                "#69f065",
-                "#f065bd",
-                "#90EE90"                
+                "#737ef1",
+                "#4b58ea",
+                            
                 ]);
 
 
@@ -61,9 +59,6 @@ var chart = new CanvasJS.Chart("rep1Div", {
 });
 chart.render();
  
-
-
-
 
 
 

@@ -17,17 +17,40 @@ const Variables = {
 
 window.onload = function () {
 
-
-
-  CanvasJS.addColorSet("myShades",
+  	// CanvasJS.addColorSet("myShades",
+    //             [
+    //             "#0157FB",
+    //             "#F5705C",
+    //             "#69f065",
+    //             "#f065bd",
+    //             "#e0dd1f"                
+    //             ]);
+	CanvasJS.addColorSet("myShades",
                 [
-
-                "#0157FB",
-                "#F5705C",
-                "#69f065",
-                "#f065bd",
-                "#90EE90"                
+                "#02fff6",
+                "#02c9c2",
+                "#01a39d",
+                "#007a75",
+                "#005955"                
                 ]);
+
+	// CanvasJS.addColorSet("FreightBreakdownColor",
+    //             [
+    //             "#0157FB",
+    //             "#F5705C",
+    //             "#f065bd",
+    //             "#f4b841"                
+    //             ]);
+
+	CanvasJS.addColorSet("FreightBreakdownColor",
+                [
+                "#02fff6",
+                "#02c9c2",
+                "#007a75",
+                "#003532"                
+                ]);
+	
+				
 
 
 
@@ -37,7 +60,7 @@ var TransitTotals = new CanvasJS.Chart("TransitTotalDiv", {
     backgroundColor: Variables.background,
     colorSet: "myShades",
 	title: {
-        text: "Total In Transit",
+        text: "Total In Transit (1st - End Of Month)",
         fontFamily: Variables.fontFamily,
         fontSize: Variables.title.fontSize
     },
@@ -72,7 +95,7 @@ var ClientShipments = new CanvasJS.Chart("ClientShipmentsDiv", {
     theme: "dark1", // "light1", "light2", "dark1", "dark2"
     backgroundColor: Variables.background,
 	title:{
-        text: "Client Shipments Per Week",
+        text: "Client Shipments Per Week (CAN, USA, MEX)",
         fontFamily: Variables.fontFamily,
         fontSize: Variables.title.fontSize
     },
@@ -101,12 +124,34 @@ var ClientShipments = new CanvasJS.Chart("ClientShipmentsDiv", {
         type: "stackedBar",
         showInLegend: true,
 		name: "LCL",
+		// indexLabel: "#total",
+		// indexLabelPlacement: "outside",
+		// indexLabelFontSize: 15,
+		// indexLabelFontWeight: "bold",
+		dataPoints: <?php echo json_encode($cs3, JSON_NUMERIC_CHECK); ?>
+	},
+	{
+        type: "stackedBar",
+        showInLegend: true,
+		name: "Domestic",
+		// indexLabel: "#total",
+		// indexLabelPlacement: "outside",
+		// indexLabelFontSize: 15,
+		// indexLabelFontWeight: "bold",
+		dataPoints: <?php echo json_encode($cs4, JSON_NUMERIC_CHECK); ?>
+	},
+	{
+        type: "stackedBar",
+        showInLegend: true,
+		name: "Break Bulk",
 		indexLabel: "#total",
 		indexLabelPlacement: "outside",
 		indexLabelFontSize: 15,
 		indexLabelFontWeight: "bold",
-		dataPoints: <?php echo json_encode($cs3, JSON_NUMERIC_CHECK); ?>
-	}]
+		dataPoints: <?php echo json_encode($cs5, JSON_NUMERIC_CHECK); ?>
+	}
+	
+	]
 });
 ClientShipments.render();
  
@@ -117,7 +162,7 @@ ClientShipments.render();
 var FreightSpendingMonthly = new CanvasJS.Chart("FreightSpendingDiv", {
     animationEnabled: true,
     backgroundColor: Variables.background,
-    colorSet: "myShades",
+    // colorSet: "myShades",
 	theme: "dark1",
 	title:{
         text: "Freight Spent Monthly",
@@ -137,6 +182,7 @@ var FreightSpendingMonthly = new CanvasJS.Chart("FreightSpendingDiv", {
 	},
 	data: [{
 		type: "column",
+		color: "#ef02c4",
 		name: "Last Year",
 		indexLabel: "{y}",
 		yValueFormatString: "$#0.##",
@@ -144,6 +190,7 @@ var FreightSpendingMonthly = new CanvasJS.Chart("FreightSpendingDiv", {
 		dataPoints: <?php echo json_encode($fsm1, JSON_NUMERIC_CHECK); ?>
 	},{
 		type: "column",
+		color: "#ad1391",
 		name: "This year",
 		indexLabel: "{y}",
 		yValueFormatString: "$#0.##",
@@ -165,15 +212,10 @@ function toggleDataSeries(e){
 
 
 
-
-
-
-
-
 var FreightBreakdown = new CanvasJS.Chart("FreightBreakdownDiv", {
     animationEnabled: true,
     backgroundColor: Variables.background,
-    colorSet: "myShades",
+    colorSet: "FreightBreakdownColor",
 	theme: "dark1",
 	title:{
         text: "Freight Spending Breakdown - This Monthly",
@@ -181,7 +223,7 @@ var FreightBreakdown = new CanvasJS.Chart("FreightBreakdownDiv", {
         fontSize: Variables.title.fontSize
     },
     subtitles: [{
-        text: "Overall",
+        text: "Peter Wittwer & Ocean Track",
         fontFamily: Variables.fontFamily,
 		fontSize: Variables.subTitle.fontSize
 	}],
@@ -215,7 +257,7 @@ function toggleDataSeries(e){
 
 
 var combined = new CanvasJS.Chart("Combined", {
-    colorSet: "myShades",
+    //colorSet: "myShades",
     theme: "dark1",
     animationEnabled: true,
     backgroundColor: "rgba(250, 247, 247, 0)",
@@ -244,29 +286,32 @@ var combined = new CanvasJS.Chart("Combined", {
 	data: [
 	{
 		type: "area",
+		color: '#e5122a',
 		name: "Expected Billed",
 		showInLegend: "true",
 		xValueType: "dateTime",
 		xValueFormatString: "MMM YYYY",
-		yValueFormatString: "₹#,##0.##",
+		yValueFormatString: "$#,##0.##",
 		dataPoints: <?php echo json_encode($dataPoints1); ?>
 	},
 	{
 		type: "column",
+		color: '#c10016',
 		name: "Current",
 		showInLegend: "true",
 		xValueType: "dateTime",
 		xValueFormatString: "MMM YYYY",
-		yValueFormatString: "₹#,##0.##",
+		yValueFormatString: "$#,##0.##",
 		dataPoints: <?php echo json_encode($dataPoints2); ?>
     },
     {
 		type: "line",
-		name: "Average Last Year",
+		color: "#f27482",
+		name: "Last Year",
 		showInLegend: "true",
 		xValueType: "dateTime",
 		xValueFormatString: "MMM YYYY",
-		yValueFormatString: "₹#,##0.##",
+		yValueFormatString: "$#,##0.##",
 		dataPoints: <?php echo json_encode($dataPoints3); ?>
     },
     
