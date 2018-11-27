@@ -89,9 +89,9 @@
           <div class="card-content">
               <div class="row">
                   <div class="col s12" style="margin-bottom: 20px;">
-                    <ul id="tabs-swipe-demo" class="tabs" >
-                      <li class="tab col s6"><a class="active" href="#test1">Ocean Track</a></li>
-                      <li class="tab col s6"><a href="#test2">Peter Wittwer</a></li>
+                    <ul class="tabs" >
+                      <li class="tab col s6"><a class="active" href="#test1">Ocean Broad</a></li>
+                      <li class="tab col s6"><a href="#test2">Lotus Right</a></li>
                     </ul>
                   </div>
 
@@ -125,16 +125,7 @@
         </div>
 
 
-       <!-- <div class="card col s12 m5">
-            <div class="card-content">
-              <div id="BilledDailyData" style="height: 270px; width: 100%;"></div>
-            </div>
-        </div> -->
-
-
-      
-
-        
+ 
 
         </div>
       </div>
@@ -162,8 +153,8 @@
 <!-- START Tabs Script -->
 <script>
  $(document).ready(function(){
-    // $('.tabs').tabs();
-    $('.tabs').tabs({ 'swipeable': true });
+    $('.tabs').tabs();
+    // $('.tabs').tabs({ 'swipeable': true });
 
   });
        

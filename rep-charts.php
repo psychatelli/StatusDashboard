@@ -52,7 +52,6 @@
                       <li class="tab col s4"><a class="active" href="#test1">Day</a></li>
                       <li class="tab col s4"><a href="#test2">Week</a></li>
                       <li class="tab col s4"><a href="#test3">Month</a></li>
-
                     </ul>
                   </div>
 
